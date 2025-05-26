@@ -1,10 +1,7 @@
 public class Empleados {
-
+    
     private Empleado[] empleados;
 
-    public Empleados(Empleado[] empleados) {
-        this.empleados = empleados;
-    }
     //getters y setters
     public Empleado[] getEmpleados() {
         return empleados;
@@ -24,7 +21,14 @@ public class Empleados {
     }
     public void aumentarSalario(double porcentaje) {
         for (Empleado empleado : empleados) {
-            double nuevoSalario = empleado.getSalario * (1 + porcentaje / 100);
-            empleado.getSalario = nuevoSalario;
+            double nuevoSalario = 0;
+            try {
+                nuevoSalario = Empleado.getSalario() * (1 + porcentaje / 100);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            Empleado.getSalario = nuevoSalario;
         }
     }
+}

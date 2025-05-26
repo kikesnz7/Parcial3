@@ -1,12 +1,11 @@
 import java.util.Scanner;
-class Mensajes {
-    public static final String INTRODUCIR_PORCENTAJE = "Introduzca el porcentaje de aumento de salario: ";
-    public static final String LISTA_EMPLEADOS = "Lista de Empleados:";
-}
 
 public class SistemaGestionEmpleados {
-    public static void main(String[] args) {
-        Empleados empleados = new Empleados(10); // Capacidad máxima de empleados
+      private static final char[] INTRODUCIR_PORCENTAJE = null;
+      private static final char[] LISTA_EMPLEADOS = null;
+
+      public static void main(String[] args) {
+        Empleados empleados = new Empleados(); // Capacidad máxima de empleados
 
         // Dar de alta empleados de ejemplo
         empleados.darDeAltaEmpleado(new Empleado("Juan", "Desarrollador", 50000));
@@ -20,7 +19,7 @@ public class SistemaGestionEmpleados {
         empleados.aumentarSalario(porcentaje);
 
         System.out.println(LISTA_EMPLEADOS);
-        empleados.mostrarEmpleados();
+        empleados.getEmpleados();
 
         scanner.close();
     }

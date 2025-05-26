@@ -1,9 +1,10 @@
 class Empleado {
+    public static double getSalario;
     // Atributos de la clase Empleado
     // nombre, cargo y salario(todos privados)
     private String nombre;
     private String cargo;
-    private double salario;
+    private static double salario;
 
     public Empleado(String nombre, String cargo, double salario) {
         this.nombre = nombre;
@@ -36,8 +37,13 @@ class Empleado {
     public String getCargo() {
         return cargo;
     }
-    public double getSalario() {
-        return salario;
+    public static double getSalario() {
+        try {
+            return salario;
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return getSalario;
     }
-    /
 }
